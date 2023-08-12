@@ -43,9 +43,9 @@ public class CommandCenter : MonoBehaviour
 
     List<Color> ColorList = new List<Color>();
 
-
-
-    
+    private GameObject lastObject;
+    private bool isContinuous= false;
+    private int lastIndex = -4;
     void Start()
     {
         ColorList = new List<Color>
@@ -82,11 +82,26 @@ public class CommandCenter : MonoBehaviour
 
     void DisplayPlatforms()
     {
+        
         foreach (MusicFrame frame in MusicNote)
         {
-            Debug.Log($"{frame.GetIndex()},{frame.GetNote()}");
-            Create(frame.GetIndex(), frame.GetNote());
 
+            Debug.Log($"{frame.GetIndex()},{frame.GetNote()}");
+
+            if (frame.GetIndex() - lastIndex <= 3f)
+            {
+                isContinuous = true;
+            }
+            else
+            {
+                isContinuous= false;
+            }
+
+            Create(frame.GetIndex(), frame.GetNote());
+            lastIndex = frame.GetIndex();
+            
+            
+            
             int ListIndex = frame.GetIndex();
             if (ListIndex == 0)
             {
@@ -102,8 +117,16 @@ public class CommandCenter : MonoBehaviour
     void Create(int Index, int noteIndex)
     {
         float randomX = UnityEngine.Random.Range(-ScreenWidthX, ScreenWidthX - 1f);
+        
         float Y = (2*Index) - (Camera.main.orthographicSize / 2);
+
+        if (isContinuous)
+        {
+            randomX = lastObject.transform.position.x;
+        }
+
         GameObject platform = Instantiate(Platform, new Vector2(randomX, Y), Quaternion.identity);
+        lastObject = platform;
         platform.GetComponent<Platform>().SetNote(noteIndex);
         platform.GetComponent<SpriteRenderer>().color = ColorList[noteIndex%7] ;
     }

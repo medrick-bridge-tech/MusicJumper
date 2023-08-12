@@ -6,15 +6,21 @@ public class Jumper : MonoBehaviour
 {
     [Header("Player")]
     private Rigidbody2D rigidBody;
+    private AudioSource audioSource;
     [SerializeField] float jumpForce;
     [SerializeField] float moveSpeed;
 
+    [SerializeField] List<AudioClip> clipList = new List<AudioClip>();
     // Start is called before the first frame update
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("platform"))
         {
             Jump();
+            int index = collision.gameObject.GetComponent<Platform>().note.noteIndex;
+
+
+            audioSource.PlayOneShot(clipList[index]);
         }
     }
 
@@ -29,6 +35,7 @@ public class Jumper : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

@@ -25,8 +25,14 @@ public class MusicFrame
     
 }
 
+
+
 public class CommandCenter : MonoBehaviour
 {
+    public Color CreateColor(float r, float g, float b)
+    {
+        return new Color(r / 255, g / 255, b / 255);
+    }
     // Start is called before the first frame update
     [SerializeField] TextAsset textAsset;
     [SerializeField] string[] MusicSheet;
@@ -35,14 +41,21 @@ public class CommandCenter : MonoBehaviour
     [SerializeField] GameObject Platform;
 
 
-    List<Color> ColorList = new List<Color>
-    {
-        Color.blue,new Color(163f/255,73f/255,164f/255),Color.red,new Color(255,127,39),Color.yellow,Color.green,new Color(34,177,76)
-    };
+    List<Color> ColorList = new List<Color>();
+
+
+
+    
     void Start()
     {
+        ColorList = new List<Color>
+        {
+        Color.blue,CreateColor(163f,73f,164f),Color.red,CreateColor(255f,127f,39f),Color.yellow,Color.green,CreateColor(34f,177f,76f)
+        };
         ReadMusic();
+
         DisplayPlatforms();
+        
     }
 
     // Update is called once per frame
@@ -92,6 +105,6 @@ public class CommandCenter : MonoBehaviour
         float Y = (2*Index) - (Camera.main.orthographicSize / 2);
         GameObject platform = Instantiate(Platform, new Vector2(randomX, Y), Quaternion.identity);
         platform.GetComponent<Platform>().SetNote(noteIndex);
-        platform.GetComponent<SpriteRenderer>().color = ColorList[noteIndex] ;
+        platform.GetComponent<SpriteRenderer>().color = ColorList[noteIndex%7] ;
     }
 }

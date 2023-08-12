@@ -7,17 +7,17 @@ using UnityEngine;
 public class MusicFrame
 {
     int Index { get; set; }
-    string Note { get; set; }
+    int Note { get; set; }
     public int GetIndex()
     {
         return Index;
     }
 
-    public string GetNote()
+    public int GetNote()
     {
         return Note;
     }
-    public MusicFrame(int index, string note)
+    public MusicFrame(int index, int note)
     {
         Index = index;
         Note = note;
@@ -37,11 +37,12 @@ public class CommandCenter : MonoBehaviour
 
     List<Color> ColorList = new List<Color>
     {
-        Color.blue,new Color(163,73,164),Color.red,new Color(255,127,39),Color.yellow,Color.green,new Color(34,177,76)
+        Color.blue,new Color(163f/255,73f/255,164f/255),Color.red,new Color(255,127,39),Color.yellow,Color.green,new Color(34,177,76)
     };
     void Start()
     {
         ReadMusic();
+        DisplayPlatforms();
     }
 
     // Update is called once per frame
@@ -53,14 +54,15 @@ public class CommandCenter : MonoBehaviour
     void ReadMusic()
     {
         int index;
+        int noteIndex;
         string MusicNoteText = (textAsset.text);
         MusicSheet = MusicNoteText.Split(",");
         
-        for (int i = 0; i < MusicSheet.Length - 1; i += 2)
+        for (int i = 0; i < MusicSheet.Length-1 ; i += 2)
         {
             index = Convert.ToInt32(MusicSheet[i]);
-
-            MusicFrame frame = new MusicFrame(index, MusicSheet[i + 1]);
+            noteIndex = Convert.ToInt32(MusicSheet[i + 1]);
+            MusicFrame frame = new MusicFrame(index, noteIndex);
             MusicNote.Add(frame);
         }
     }
@@ -69,6 +71,7 @@ public class CommandCenter : MonoBehaviour
     {
         foreach (MusicFrame frame in MusicNote)
         {
+            Debug.Log($"{frame.GetIndex()},{frame.GetNote()}");
             Create(frame.GetIndex(), frame.GetNote());
 
             int ListIndex = frame.GetIndex();
@@ -83,12 +86,12 @@ public class CommandCenter : MonoBehaviour
         }
     }
 
-    void Create(int Index, string Value)
+    void Create(int Index, int noteIndex)
     {
         float randomX = UnityEngine.Random.Range(-ScreenWidthX, ScreenWidthX - 1f);
-        float Y = Index - (Camera.main.orthographicSize / 2);
+        float Y = (2*Index) - (Camera.main.orthographicSize / 2);
         GameObject platform = Instantiate(Platform, new Vector2(randomX, Y), Quaternion.identity);
-        Color color = ColorList[Index];
-        Platform.GetComponent<Platform>().SetNote(Index,color);
+        platform.GetComponent<Platform>().SetNote(noteIndex);
+        platform.GetComponent<SpriteRenderer>().color = ColorList[noteIndex] ;
     }
 }

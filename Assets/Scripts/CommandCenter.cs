@@ -39,19 +39,19 @@ public class CommandCenter : MonoBehaviour
     [SerializeField] float ScreenWidthX;
     public List<MusicFrame> MusicNote = new List<MusicFrame>();
     [SerializeField] GameObject Platform;
-
-
     List<Color> ColorList = new List<Color>();
+    List<string> NotesName = new List<string>
+    {
+        "C1","D1","E1","F1","G1","A1","B1","C2"
+    };
 
     private GameObject lastObject;
     private bool isContinuous= false;
     private int lastIndex = -4;
     void Start()
     {
-        ColorList = new List<Color>
-        {
-        Color.blue,CreateColor(163f,73f,164f),Color.red,CreateColor(255f,127f,39f),Color.yellow,Color.green,CreateColor(34f,177f,76f)
-        };
+        ColorList = new List<Color>{Color.blue,CreateColor(163f,73f,164f),Color.red,CreateColor(255f,127f,39f),Color.yellow,Color.green,CreateColor(34f,177f,76f)};
+
         ReadMusic();
 
         DisplayPlatforms();
@@ -74,7 +74,7 @@ public class CommandCenter : MonoBehaviour
         for (int i = 0; i < MusicSheet.Length-1 ; i += 2)
         {
             index = Convert.ToInt32(MusicSheet[i]);
-            noteIndex = Convert.ToInt32(MusicSheet[i + 1]);
+            noteIndex = NotesName.IndexOf(MusicSheet[i + 1]);
             MusicFrame frame = new MusicFrame(index, noteIndex);
             MusicNote.Add(frame);
         }

@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012a4c6b059454d47988119bb12e678c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textAsset: {fileID: 4900000, guid: c7e9559d1878e2045878c8285e57203a, type: 3}
+  textAsset: {fileID: 4900000, guid: b851a04cce7190e479f99cf1d299c116, type: 3}
   MusicSheet: []
   ScreenWidthX: 4.4
   Platform: {fileID: 6697201518510171382, guid: 8a1fd5e375811f84ea38d13dc618e3fb, type: 3}
@@ -503,7 +503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4937243576339822000, guid: c5aaf36267156084b9962cabbe2aa22d, type: 3}
       propertyPath: clipList.Array.size
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4937243576339822000, guid: c5aaf36267156084b9962cabbe2aa22d, type: 3}
       propertyPath: clipList.Array.data[11]
@@ -529,6 +529,10 @@ PrefabInstance:
       propertyPath: clipList.Array.data[16]
       value: 
       objectReference: {fileID: 8300000, guid: c2edb974435a4244ea5b311407e70854, type: 3}
+    - target: {fileID: 4937243576339822000, guid: c5aaf36267156084b9962cabbe2aa22d, type: 3}
+      propertyPath: clipList.Array.data[17]
+      value: 
+      objectReference: {fileID: 8300000, guid: b2f9871ddcd21cf4bb757ebcf5a5d8df, type: 3}
     - target: {fileID: 4937243576339822002, guid: c5aaf36267156084b9962cabbe2aa22d, type: 3}
       propertyPath: m_RootOrder
       value: 1

@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012a4c6b059454d47988119bb12e678c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textAsset: {fileID: 4900000, guid: 6203bc06a07341c448607b2085d4f867, type: 3}
+  textAsset: {fileID: 4900000, guid: fafdd6fc50a6e5740a69a37587c2c46e, type: 3}
   MusicSheet: []
   ScreenWidthX: 4.4
   Platform: {fileID: 6697201518510171382, guid: 8a1fd5e375811f84ea38d13dc618e3fb, type: 3}
@@ -510,15 +510,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 16
-  moveSpeed: 8
+  moveSpeed: 10
   clipList:
-  - {fileID: 8300000, guid: 0db5c5377a418c1418058ec782efd5dd, type: 3}
-  - {fileID: 8300000, guid: 6d8dfb02744ba3444a107fe918f44f24, type: 3}
-  - {fileID: 8300000, guid: cffa0e36fa3d9294a8206dce36320440, type: 3}
-  - {fileID: 8300000, guid: 86f95019ffb36e64a81b8fbb8f0f019c, type: 3}
-  - {fileID: 8300000, guid: 3d9dbb1b00967e040ba56b60828bf124, type: 3}
   - {fileID: 8300000, guid: 3cff06009a34e9a468d641cb41c7e8d9, type: 3}
+  - {fileID: 8300000, guid: 47c4d8ff8aba7c341b333b8b08d951c3, type: 3}
   - {fileID: 8300000, guid: aa89896651c82ab499aae2092bc52340, type: 3}
+  - {fileID: 8300000, guid: 255a4b29265907f4083121ed6640af13, type: 3}
+  - {fileID: 8300000, guid: 700938be3cefba845ac462cc0943d334, type: 3}
+  - {fileID: 8300000, guid: e06c92eccc677ad498dc94e871a63b9c, type: 3}
+  - {fileID: 8300000, guid: 859e4236626dba24281e137e50f362ab, type: 3}
+  - {fileID: 8300000, guid: e945da98a5444c8408675af867c1d098, type: 3}
+  - {fileID: 8300000, guid: 1a6dc464f4410f540a3afe7e038961b0, type: 3}
+  - {fileID: 8300000, guid: f8cf3010b92b6b1429a4b963024f499f, type: 3}
   - {fileID: 8300000, guid: 7930a0cbeffa6ae44b76d0002c52eb68, type: 3}
 --- !u!212 &896248630
 SpriteRenderer:

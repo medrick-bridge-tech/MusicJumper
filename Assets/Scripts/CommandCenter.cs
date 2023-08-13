@@ -42,7 +42,7 @@ public class CommandCenter : MonoBehaviour
     List<Color> ColorList = new List<Color>();
     List<string> NotesName = new List<string>
     {
-        "C1","D1","E1","F1","G1","A1","B1","C2"
+        "A","Bb","B","C1","D1","E1","F1","G1","A1","B1","C2"
     };
 
     private GameObject lastObject;

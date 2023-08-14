@@ -9,8 +9,9 @@ public class Jumper : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField] float jumpForce;
     [SerializeField] float moveSpeed;
-    
-    [SerializeField] List<AudioClip> clipList = new List<AudioClip>();
+
+    //[SerializeField] List<AudioClip> clipList = new List<AudioClip>();
+    public NotesStorage notesStorage;
     
     // Start is called before the first frame update
     void OnCollisionEnter2D(Collision2D collision)
@@ -20,8 +21,8 @@ public class Jumper : MonoBehaviour
             Jump();
             int index = collision.gameObject.GetComponent<Platform>().note.noteIndex;
 
-
-            audioSource.PlayOneShot(clipList[index]);
+            
+            audioSource.PlayOneShot(notesStorage.notes[index].noteSound);
         }
     }
 

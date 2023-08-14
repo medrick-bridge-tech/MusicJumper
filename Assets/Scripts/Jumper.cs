@@ -9,8 +9,9 @@ public class Jumper : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField] float jumpForce;
     [SerializeField] float moveSpeed;
-
+    
     [SerializeField] List<AudioClip> clipList = new List<AudioClip>();
+    
     // Start is called before the first frame update
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -24,6 +25,14 @@ public class Jumper : MonoBehaviour
         }
     }
 
+    public void setJumpForce(float force)
+    {
+        jumpForce = force;
+    }
+    public void setMoveSpeed(float speed)
+    {
+        moveSpeed = speed;
+    }
     void Jump()
     {
         Vector2 Velocity = rigidBody.velocity;
@@ -36,6 +45,7 @@ public class Jumper : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame

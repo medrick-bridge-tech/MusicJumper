@@ -37,6 +37,7 @@ public class CommandCenter : MonoBehaviour
     [SerializeField] TextAsset textAsset;
     [SerializeField] string[] MusicSheet;
     [SerializeField] float ScreenWidthX;
+    [SerializeField][Range(20f,180f)] float BPM;
     public List<MusicFrame> MusicNote = new List<MusicFrame>();
     [SerializeField] GameObject Platform;
     List<Color> ColorList = new List<Color>();
@@ -48,10 +49,25 @@ public class CommandCenter : MonoBehaviour
     private GameObject lastObject;
     private bool isContinuous= false;
     private int lastIndex = -4;
+    private float percentPerBPM;
+
+    Jumper player;
+    public float GetPercentPerBMP()
+    {
+        return percentPerBPM;
+    }
     void Start()
     {
         ColorList = new List<Color>{Color.blue,CreateColor(163f,73f,164f),Color.red,CreateColor(255f,127f,39f),Color.yellow,Color.green,CreateColor(34f,177f,76f)};
 
+        percentPerBPM = Mathf.InverseLerp(20f, 120f, BPM);
+
+        float jumpValue = Mathf.Lerp(28f, 12f, percentPerBPM);
+        float speedValue = Mathf.Lerp(10f, 20f, percentPerBPM);
+        player = FindObjectOfType<Jumper>();
+
+        player.setJumpForce(jumpValue);
+        player.setMoveSpeed(speedValue);
         ReadMusic();
 
         DisplayPlatforms();
@@ -118,8 +134,8 @@ public class CommandCenter : MonoBehaviour
     {
         float randomX = UnityEngine.Random.Range(-ScreenWidthX, ScreenWidthX - 1f);
         
-        float Y = (2*Index) - (Camera.main.orthographicSize / 2);
-
+        float Y = (2*(1/(BPM/60))*Index) - (Camera.main.orthographicSize / 2);
+        
         if (isContinuous)
         {
             randomX = lastObject.transform.position.x;

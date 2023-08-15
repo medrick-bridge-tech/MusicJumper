@@ -1,0 +1,214 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d03254b9ec739cd46bdb53af4c1e7f35, type: 3}
+  m_Name: GameOfThrones
+  m_EditorClassIdentifier: 
+  textAsset: {fileID: 4900000, guid: fafdd6fc50a6e5740a69a37587c2c46e, type: 3}
+  BPM: 60
+  MusicSheet:
+  - NoteName: 8
+    Index: 0
+  - NoteName: 4
+    Index: 6
+  - NoteName: 6
+    Index: 12
+  - NoteName: 7
+    Index: 13
+  - NoteName: 8
+    Index: 14
+  - NoteName: 4
+    Index: 18
+  - NoteName: 6
+    Index: 22
+  - NoteName: 7
+    Index: 23
+  - NoteName: 5
+    Index: 24
+  - NoteName: 0
+    Index: 26
+  - NoteName: 3
+    Index: 28
+  - NoteName: 4
+    Index: 29
+  - NoteName: 5
+    Index: 30
+  - NoteName: 0
+    Index: 32
+  - NoteName: 3
+    Index: 34
+  - NoteName: 4
+    Index: 35
+  - NoteName: 5
+    Index: 36
+  - NoteName: 0
+    Index: 38
+  - NoteName: 3
+    Index: 40
+  - NoteName: 4
+    Index: 41
+  - NoteName: 5
+    Index: 42
+  - NoteName: 0
+    Index: 44
+  - NoteName: 3
+    Index: 46
+  - NoteName: 7
+    Index: 48
+  - NoteName: 3
+    Index: 54
+  - NoteName: 5
+    Index: 60
+  - NoteName: 6
+    Index: 61
+  - NoteName: 7
+    Index: 62
+  - NoteName: 3
+    Index: 66
+  - NoteName: 6
+    Index: 70
+  - NoteName: 5
+    Index: 71
+  - NoteName: 4
+    Index: 72
+  - NoteName: 0
+    Index: 74
+  - NoteName: 1
+    Index: 76
+  - NoteName: 3
+    Index: 77
+  - NoteName: 4
+    Index: 78
+  - NoteName: 0
+    Index: 80
+  - NoteName: 1
+    Index: 82
+  - NoteName: 3
+    Index: 83
+  - NoteName: 4
+    Index: 84
+  - NoteName: 0
+    Index: 86
+  - NoteName: 1
+    Index: 88
+  - NoteName: 3
+    Index: 89
+  - NoteName: 4
+    Index: 90
+  - NoteName: 0
+    Index: 92
+  - NoteName: 3
+    Index: 94
+  - NoteName: 4
+    Index: 96
+  - NoteName: 4
+    Index: 102
+  - NoteName: 4
+    Index: 108
+  - NoteName: 4
+    Index: 114
+  - NoteName: 4
+    Index: 116
+  - NoteName: 8
+    Index: 120
+  - NoteName: 4
+    Index: 126
+  - NoteName: 6
+    Index: 132
+  - NoteName: 7
+    Index: 133
+  - NoteName: 8
+    Index: 134
+  - NoteName: 4
+    Index: 138
+  - NoteName: 6
+    Index: 142
+  - NoteName: 7
+    Index: 143
+  - NoteName: 5
+    Index: 144
+  - NoteName: 0
+    Index: 146
+  - NoteName: 3
+    Index: 148
+  - NoteName: 4
+    Index: 149
+  - NoteName: 5
+    Index: 150
+  - NoteName: 0
+    Index: 152
+  - NoteName: 3
+    Index: 154
+  - NoteName: 4
+    Index: 155
+  - NoteName: 5
+    Index: 156
+  - NoteName: 0
+    Index: 158
+  - NoteName: 3
+    Index: 160
+  - NoteName: 4
+    Index: 161
+  - NoteName: 5
+    Index: 162
+  - NoteName: 0
+    Index: 164
+  - NoteName: 3
+    Index: 166
+  - NoteName: 7
+    Index: 168
+  - NoteName: 3
+    Index: 174
+  - NoteName: 5
+    Index: 180
+  - NoteName: 6
+    Index: 181
+  - NoteName: 7
+    Index: 182
+  - NoteName: 3
+    Index: 186
+  - NoteName: 6
+    Index: 190
+  - NoteName: 5
+    Index: 191
+  - NoteName: 4
+    Index: 192
+  - NoteName: 0
+    Index: 194
+  - NoteName: 1
+    Index: 196
+  - NoteName: 3
+    Index: 197
+  - NoteName: 4
+    Index: 198
+  - NoteName: 0
+    Index: 200
+  - NoteName: 1
+    Index: 202
+  - NoteName: 3
+    Index: 203
+  - NoteName: 4
+    Index: 204
+  - NoteName: 0
+    Index: 206
+  - NoteName: 1
+    Index: 208
+  - NoteName: 3
+    Index: 209
+  - NoteName: 4
+    Index: 210
+  - NoteName: 0
+    Index: 212
+  - NoteName: 3
+    Index: 214
+  - NoteName: 4
+    Index: 216
+  Platform: {fileID: 6697201518510171382, guid: 8a1fd5e375811f84ea38d13dc618e3fb, type: 3}

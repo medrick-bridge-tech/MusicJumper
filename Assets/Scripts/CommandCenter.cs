@@ -4,31 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicFrame
-{
-    int Index { get; set; }
-    int Note { get; set; }
-    public int GetIndex()
-    {
-        return Index;
-    }
 
-    public int GetNote()
-    {
-        return Note;
-    }
-    public MusicFrame(int index, int note)
-    {
-        Index = index;
-        Note = note;
-    }
-    
-}
 
 
 
 public class CommandCenter : MonoBehaviour
 {
+    /*
     public Color CreateColor(float r, float g, float b)
     {
         return new Color(r / 255, g / 255, b / 255);
@@ -79,7 +61,7 @@ public class CommandCenter : MonoBehaviour
     {
         
     }
-
+    
     void ReadMusic()
     {
         int index;
@@ -145,5 +127,5 @@ public class CommandCenter : MonoBehaviour
         lastObject = platform;
         platform.GetComponent<Platform>().SetNote(noteIndex);
         platform.GetComponent<SpriteRenderer>().color = ColorList[noteIndex%7] ;
-    }
+    }*/
 }

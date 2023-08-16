@@ -18,4 +18,124 @@ MonoBehaviour:
   - NoteName: 12
     duration: 0
   - NoteName: 12
-    duration: 0
+    duration: 4
+  - NoteName: 12
+    duration: 8
+  - NoteName: 14
+    duration: 12
+  - NoteName: 14
+    duration: 16
+  - NoteName: 13
+    duration: 20
+  - NoteName: 12
+    duration: 24
+  - NoteName: 11
+    duration: 28
+  - NoteName: 10
+    duration: 32
+  - NoteName: 10
+    duration: 36
+  - NoteName: 11
+    duration: 40
+  - NoteName: 12
+    duration: 44
+  - NoteName: 12
+    duration: 48
+  - NoteName: 11
+    duration: 54
+  - NoteName: 11
+    duration: 56
+  - NoteName: 12
+    duration: 62
+  - NoteName: 12
+    duration: 66
+  - NoteName: 13
+    duration: 70
+  - NoteName: 14
+    duration: 74
+  - NoteName: 14
+    duration: 78
+  - NoteName: 13
+    duration: 82
+  - NoteName: 12
+    duration: 86
+  - NoteName: 11
+    duration: 90
+  - NoteName: 10
+    duration: 94
+  - NoteName: 10
+    duration: 98
+  - NoteName: 11
+    duration: 102
+  - NoteName: 12
+    duration: 106
+  - NoteName: 11
+    duration: 110
+  - NoteName: 10
+    duration: 116
+  - NoteName: 10
+    duration: 118
+  - NoteName: 11
+    duration: 124
+  - NoteName: 11
+    duration: 128
+  - NoteName: 12
+    duration: 132
+  - NoteName: 10
+    duration: 136
+  - NoteName: 11
+    duration: 140
+  - NoteName: 12
+    duration: 144
+  - NoteName: 13
+    duration: 146
+  - NoteName: 12
+    duration: 148
+  - NoteName: 10
+    duration: 152
+  - NoteName: 11
+    duration: 156
+  - NoteName: 12
+    duration: 160
+  - NoteName: 13
+    duration: 162
+  - NoteName: 12
+    duration: 164
+  - NoteName: 11
+    duration: 168
+  - NoteName: 10
+    duration: 172
+  - NoteName: 11
+    duration: 176
+  - NoteName: 11
+    duration: 180
+  - NoteName: 12
+    duration: 186
+  - NoteName: 12
+    duration: 190
+  - NoteName: 13
+    duration: 194
+  - NoteName: 14
+    duration: 198
+  - NoteName: 14
+    duration: 202
+  - NoteName: 13
+    duration: 206
+  - NoteName: 12
+    duration: 210
+  - NoteName: 11
+    duration: 214
+  - NoteName: 10
+    duration: 218
+  - NoteName: 10
+    duration: 222
+  - NoteName: 11
+    duration: 226
+  - NoteName: 12
+    duration: 230
+  - NoteName: 11
+    duration: 234
+  - NoteName: 10
+    duration: 240
+  - NoteName: 10
+    duration: 242

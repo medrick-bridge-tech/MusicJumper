@@ -167,10 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012a4c6b059454d47988119bb12e678c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textAsset: {fileID: 4900000, guid: fafdd6fc50a6e5740a69a37587c2c46e, type: 3}
-  MusicSheet: []
-  ScreenWidthX: 4.4
+  musicNote: {fileID: 11400000, guid: 67df86cb62458eb44a749185e0a6e0e6, type: 2}
   Platform: {fileID: 6697201518510171382, guid: 8a1fd5e375811f84ea38d13dc618e3fb, type: 3}
+  ScreenWidthX: 4.4
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

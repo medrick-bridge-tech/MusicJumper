@@ -19,9 +19,10 @@ public class Jumper : MonoBehaviour
         if (collision.gameObject.CompareTag("platform"))
         {
             Jump();
-            int index = collision.gameObject.GetComponent<Platform>().note.noteIndex;
+            Notes noteName = collision.gameObject.GetComponent<Platform>().NoteName;
 
-            
+            int index = (int)noteName;
+
             audioSource.PlayOneShot(notesStorage.notes[index].noteSound);
         }
     }

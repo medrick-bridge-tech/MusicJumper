@@ -3,10 +3,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+
 public class CommandCenter : MonoBehaviour
 {
     
-    [SerializeField] MusicNote musicNote;
+    [FormerlySerializedAs("musicNote")] [SerializeField] Music music;
     [SerializeField] GameObject platform;
     [SerializeField] float screenWidthX;
     List<Color> _colorList = new List<Color>();
@@ -30,7 +32,7 @@ public class CommandCenter : MonoBehaviour
     {
         _isContinuous = false;
         _colorList = new List<Color> { Color.blue, CreateColor(163f, 73f, 164f), Color.red, CreateColor(255f, 127f, 39f), Color.yellow, Color.green, CreateColor(34f, 177f, 76f) };
-        _bpm = musicNote.GetBpm();
+        _bpm = music.GetBpm();
         _percentPerBpm = Mathf.InverseLerp(20f, 120f,_bpm);
 
         float jumpValue = Mathf.Lerp(28f, 16f, _percentPerBpm);
@@ -47,11 +49,11 @@ public class CommandCenter : MonoBehaviour
     void DisplayPlatforms()
     {
         
-        for(int i = 0; i < musicNote.musicSheet.Count; i++)
+        for(int i = 0; i < music.MusicSheet.Count; i++)
         {
-            int duration = musicNote.musicSheet[i].duration;
+            int duration = music.MusicSheet[i].duration;
             
-            Notes noteName = musicNote.musicSheet[i].noteName;
+            Notes noteName = music.MusicSheet[i].noteName;
             
             if (duration - _lastIndex <= 3f)
             {

@@ -12,388 +12,387 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03254b9ec739cd46bdb53af4c1e7f35, type: 3}
   m_Name: Casatchok
   m_EditorClassIdentifier: 
-  textAsset: {fileID: 4900000, guid: c7e9559d1878e2045878c8285e57203a, type: 3}
-  BPM: 20
-  MusicSheet:
-  - NoteName: 8
+  bpm: 20
+  musicSheet:
+  - noteName: 8
     duration: 0
-  - NoteName: 9
+  - noteName: 9
     duration: 6
-  - NoteName: 10
+  - noteName: 10
     duration: 8
-  - NoteName: 10
+  - noteName: 10
     duration: 10
-  - NoteName: 8
+  - noteName: 8
     duration: 14
-  - NoteName: 10
+  - noteName: 10
     duration: 16
-  - NoteName: 10
+  - noteName: 10
     duration: 18
-  - NoteName: 9
+  - noteName: 9
     duration: 20
-  - NoteName: 8
+  - noteName: 8
     duration: 22
-  - NoteName: 9
+  - noteName: 9
     duration: 24
-  - NoteName: 5
+  - noteName: 5
     duration: 28
-  - NoteName: 9
+  - noteName: 9
     duration: 32
-  - NoteName: 9
+  - noteName: 9
     duration: 34
-  - NoteName: 10
+  - noteName: 10
     duration: 38
-  - NoteName: 11
+  - noteName: 11
     duration: 40
-  - NoteName: 11
+  - noteName: 11
     duration: 42
-  - NoteName: 9
+  - noteName: 9
     duration: 46
-  - NoteName: 11
+  - noteName: 11
     duration: 48
-  - NoteName: 11
+  - noteName: 11
     duration: 50
-  - NoteName: 10
+  - noteName: 10
     duration: 52
-  - NoteName: 9
+  - noteName: 9
     duration: 54
-  - NoteName: 8
+  - noteName: 8
     duration: 56
-  - NoteName: 8
+  - noteName: 8
     duration: 62
-  - NoteName: 8
+  - noteName: 8
     duration: 64
-  - NoteName: 9
+  - noteName: 9
     duration: 68
-  - NoteName: 10
+  - noteName: 10
     duration: 70
-  - NoteName: 10
+  - noteName: 10
     duration: 72
-  - NoteName: 8
+  - noteName: 8
     duration: 76
-  - NoteName: 10
+  - noteName: 10
     duration: 78
-  - NoteName: 10
+  - noteName: 10
     duration: 80
-  - NoteName: 9
+  - noteName: 9
     duration: 82
-  - NoteName: 8
+  - noteName: 8
     duration: 84
-  - NoteName: 9
+  - noteName: 9
     duration: 86
-  - NoteName: 5
+  - noteName: 5
     duration: 90
-  - NoteName: 9
+  - noteName: 9
     duration: 94
-  - NoteName: 9
+  - noteName: 9
     duration: 96
-  - NoteName: 10
+  - noteName: 10
     duration: 100
-  - NoteName: 11
+  - noteName: 11
     duration: 102
-  - NoteName: 11
+  - noteName: 11
     duration: 104
-  - NoteName: 9
+  - noteName: 9
     duration: 108
-  - NoteName: 11
+  - noteName: 11
     duration: 110
-  - NoteName: 11
+  - noteName: 11
     duration: 112
-  - NoteName: 10
+  - noteName: 10
     duration: 114
-  - NoteName: 9
+  - noteName: 9
     duration: 116
-  - NoteName: 8
+  - noteName: 8
     duration: 118
-  - NoteName: 9
+  - noteName: 9
     duration: 120
-  - NoteName: 10
+  - noteName: 10
     duration: 122
-  - NoteName: 11
+  - noteName: 11
     duration: 124
-  - NoteName: 12
+  - noteName: 12
     duration: 126
-  - NoteName: 15
+  - noteName: 15
     duration: 130
-  - NoteName: 14
+  - noteName: 14
     duration: 134
-  - NoteName: 15
+  - noteName: 15
     duration: 138
-  - NoteName: 14
+  - noteName: 14
     duration: 140
-  - NoteName: 13
+  - noteName: 13
     duration: 142
-  - NoteName: 13
+  - noteName: 13
     duration: 144
-  - NoteName: 12
+  - noteName: 12
     duration: 146
-  - NoteName: 11
+  - noteName: 11
     duration: 148
-  - NoteName: 12
+  - noteName: 12
     duration: 150
-  - NoteName: 8
+  - noteName: 8
     duration: 154
-  - NoteName: 8
+  - noteName: 8
     duration: 158
-  - NoteName: 13
+  - noteName: 13
     duration: 160
-  - NoteName: 11
+  - noteName: 11
     duration: 164
-  - NoteName: 12
+  - noteName: 12
     duration: 166
-  - NoteName: 12
+  - noteName: 12
     duration: 168
-  - NoteName: 10
+  - noteName: 10
     duration: 172
-  - NoteName: 11
+  - noteName: 11
     duration: 174
-  - NoteName: 11
+  - noteName: 11
     duration: 176
-  - NoteName: 10
+  - noteName: 10
     duration: 178
-  - NoteName: 9
+  - noteName: 9
     duration: 180
-  - NoteName: 8
+  - noteName: 8
     duration: 182
-  - NoteName: 9
+  - noteName: 9
     duration: 184
-  - NoteName: 10
+  - noteName: 10
     duration: 186
-  - NoteName: 11
+  - noteName: 11
     duration: 188
-  - NoteName: 12
+  - noteName: 12
     duration: 190
-  - NoteName: 15
+  - noteName: 15
     duration: 194
-  - NoteName: 14
+  - noteName: 14
     duration: 198
-  - NoteName: 15
+  - noteName: 15
     duration: 202
-  - NoteName: 14
+  - noteName: 14
     duration: 204
-  - NoteName: 13
+  - noteName: 13
     duration: 206
-  - NoteName: 13
+  - noteName: 13
     duration: 208
-  - NoteName: 12
+  - noteName: 12
     duration: 210
-  - NoteName: 11
+  - noteName: 11
     duration: 212
-  - NoteName: 12
+  - noteName: 12
     duration: 214
-  - NoteName: 8
+  - noteName: 8
     duration: 218
-  - NoteName: 8
+  - noteName: 8
     duration: 222
-  - NoteName: 13
+  - noteName: 13
     duration: 224
-  - NoteName: 11
+  - noteName: 11
     duration: 228
-  - NoteName: 12
+  - noteName: 12
     duration: 230
-  - NoteName: 12
+  - noteName: 12
     duration: 232
-  - NoteName: 10
+  - noteName: 10
     duration: 236
-  - NoteName: 11
+  - noteName: 11
     duration: 238
-  - NoteName: 11
+  - noteName: 11
     duration: 240
-  - NoteName: 10
+  - noteName: 10
     duration: 242
-  - NoteName: 9
+  - noteName: 9
     duration: 244
-  - NoteName: 8
+  - noteName: 8
     duration: 246
-  - NoteName: 8
+  - noteName: 8
     duration: 252
-  - NoteName: 8
+  - noteName: 8
     duration: 254
-  - NoteName: 9
+  - noteName: 9
     duration: 258
-  - NoteName: 10
+  - noteName: 10
     duration: 260
-  - NoteName: 10
+  - noteName: 10
     duration: 262
-  - NoteName: 8
+  - noteName: 8
     duration: 266
-  - NoteName: 10
+  - noteName: 10
     duration: 268
-  - NoteName: 10
+  - noteName: 10
     duration: 270
-  - NoteName: 9
+  - noteName: 9
     duration: 272
-  - NoteName: 8
+  - noteName: 8
     duration: 274
-  - NoteName: 9
+  - noteName: 9
     duration: 276
-  - NoteName: 5
+  - noteName: 5
     duration: 280
-  - NoteName: 9
+  - noteName: 9
     duration: 284
-  - NoteName: 9
+  - noteName: 9
     duration: 286
-  - NoteName: 10
+  - noteName: 10
     duration: 290
-  - NoteName: 11
+  - noteName: 11
     duration: 292
-  - NoteName: 11
+  - noteName: 11
     duration: 294
-  - NoteName: 9
+  - noteName: 9
     duration: 298
-  - NoteName: 11
+  - noteName: 11
     duration: 300
-  - NoteName: 11
+  - noteName: 11
     duration: 302
-  - NoteName: 10
+  - noteName: 10
     duration: 304
-  - NoteName: 9
+  - noteName: 9
     duration: 306
-  - NoteName: 8
+  - noteName: 8
     duration: 308
-  - NoteName: 8
+  - noteName: 8
     duration: 314
-  - NoteName: 8
+  - noteName: 8
     duration: 316
-  - NoteName: 9
+  - noteName: 9
     duration: 320
-  - NoteName: 10
+  - noteName: 10
     duration: 322
-  - NoteName: 10
+  - noteName: 10
     duration: 324
-  - NoteName: 8
+  - noteName: 8
     duration: 328
-  - NoteName: 10
+  - noteName: 10
     duration: 330
-  - NoteName: 10
+  - noteName: 10
     duration: 332
-  - NoteName: 9
+  - noteName: 9
     duration: 334
-  - NoteName: 8
+  - noteName: 8
     duration: 336
-  - NoteName: 9
+  - noteName: 9
     duration: 338
-  - NoteName: 5
+  - noteName: 5
     duration: 342
-  - NoteName: 9
+  - noteName: 9
     duration: 346
-  - NoteName: 9
+  - noteName: 9
     duration: 348
-  - NoteName: 10
+  - noteName: 10
     duration: 352
-  - NoteName: 11
+  - noteName: 11
     duration: 354
-  - NoteName: 11
+  - noteName: 11
     duration: 356
-  - NoteName: 9
+  - noteName: 9
     duration: 360
-  - NoteName: 11
+  - noteName: 11
     duration: 362
-  - NoteName: 11
+  - noteName: 11
     duration: 364
-  - NoteName: 10
+  - noteName: 10
     duration: 366
-  - NoteName: 9
+  - noteName: 9
     duration: 368
-  - NoteName: 8
+  - noteName: 8
     duration: 370
-  - NoteName: 9
+  - noteName: 9
     duration: 372
-  - NoteName: 10
+  - noteName: 10
     duration: 374
-  - NoteName: 11
+  - noteName: 11
     duration: 376
-  - NoteName: 12
+  - noteName: 12
     duration: 378
-  - NoteName: 15
+  - noteName: 15
     duration: 382
-  - NoteName: 14
+  - noteName: 14
     duration: 386
-  - NoteName: 15
+  - noteName: 15
     duration: 390
-  - NoteName: 14
+  - noteName: 14
     duration: 392
-  - NoteName: 13
+  - noteName: 13
     duration: 394
-  - NoteName: 13
+  - noteName: 13
     duration: 396
-  - NoteName: 12
+  - noteName: 12
     duration: 398
-  - NoteName: 11
+  - noteName: 11
     duration: 400
-  - NoteName: 12
+  - noteName: 12
     duration: 402
-  - NoteName: 8
+  - noteName: 8
     duration: 406
-  - NoteName: 8
+  - noteName: 8
     duration: 410
-  - NoteName: 13
+  - noteName: 13
     duration: 412
-  - NoteName: 11
+  - noteName: 11
     duration: 416
-  - NoteName: 12
+  - noteName: 12
     duration: 418
-  - NoteName: 12
+  - noteName: 12
     duration: 420
-  - NoteName: 10
+  - noteName: 10
     duration: 424
-  - NoteName: 11
+  - noteName: 11
     duration: 426
-  - NoteName: 11
+  - noteName: 11
     duration: 428
-  - NoteName: 10
+  - noteName: 10
     duration: 430
-  - NoteName: 9
+  - noteName: 9
     duration: 432
-  - NoteName: 8
+  - noteName: 8
     duration: 434
-  - NoteName: 9
+  - noteName: 9
     duration: 436
-  - NoteName: 10
+  - noteName: 10
     duration: 438
-  - NoteName: 11
+  - noteName: 11
     duration: 440
-  - NoteName: 12
+  - noteName: 12
     duration: 442
-  - NoteName: 15
+  - noteName: 15
     duration: 446
-  - NoteName: 14
+  - noteName: 14
     duration: 450
-  - NoteName: 15
+  - noteName: 15
     duration: 454
-  - NoteName: 14
+  - noteName: 14
     duration: 456
-  - NoteName: 13
+  - noteName: 13
     duration: 458
-  - NoteName: 13
+  - noteName: 13
     duration: 460
-  - NoteName: 12
+  - noteName: 12
     duration: 462
-  - NoteName: 11
+  - noteName: 11
     duration: 464
-  - NoteName: 12
+  - noteName: 12
     duration: 466
-  - NoteName: 8
+  - noteName: 8
     duration: 470
-  - NoteName: 8
+  - noteName: 8
     duration: 474
-  - NoteName: 13
+  - noteName: 13
     duration: 476
-  - NoteName: 11
+  - noteName: 11
     duration: 480
-  - NoteName: 12
+  - noteName: 12
     duration: 482
-  - NoteName: 12
+  - noteName: 12
     duration: 484
-  - NoteName: 10
+  - noteName: 10
     duration: 488
-  - NoteName: 11
+  - noteName: 11
     duration: 490
-  - NoteName: 11
+  - noteName: 11
     duration: 492
-  - NoteName: 10
+  - noteName: 10
     duration: 494
-  - NoteName: 9
+  - noteName: 9
     duration: 496
-  - NoteName: 8
+  - noteName: 8
     duration: 498

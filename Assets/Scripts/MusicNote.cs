@@ -12,13 +12,25 @@ using UnityEngine.Assertions.Must;
 public class MusicFrame
 {
     public Notes NoteName;
-    public int Index;
+    public int duration;
     
-    public MusicFrame(Notes noteName, int index)
+    public MusicFrame(Notes noteName, int Duration)
     {
         NoteName = noteName;
-        Index = index;
+        duration = Duration;
     }
+    
+    public int GetIndex(Notes NoteName)
+    {
+        int Index = (int)NoteName;
+        return Index;
+    }
+
+    public int GetDuration()
+    {
+        return duration;
+    }
+    
 
 }
 
@@ -29,14 +41,25 @@ public class MusicNote : ScriptableObject
     [SerializeField][Range(20f, 180f)] float BPM;
     public List<MusicFrame> MusicSheet;
 
+    public float GetBPM()
+    {
+        return BPM;
+    }
+
+    public string GetNoteName(Notes note)
+    {
+        return note.ToString();
+    }
     public void AddMMusic()
     {
 
         string[] MusicNoteText = (textAsset.text).Split(",");
+        
 
         for (int i = 0; i < MusicNoteText.Length; i += 2)
         {
             try{
+                Debug.Log(Convert.ToInt32(MusicNoteText[i]));
                 int duration = Convert.ToInt32(MusicNoteText[i]);
                 Notes thisFrame = (Notes)Enum.Parse(typeof(Notes), MusicNoteText[i + 1], true);
                 MusicSheet.Add(new MusicFrame(thisFrame, duration));

@@ -187,6 +187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4937243576339822006, guid: c5aaf36267156084b9962cabbe2aa22d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: c5aaf36267156084b9962cabbe2aa22d, type: 3}
@@ -239,11 +243,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012a4c6b059454d47988119bb12e678c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textAsset: {fileID: 4900000, guid: c7e9559d1878e2045878c8285e57203a, type: 3}
-  MusicSheet: []
-  ScreenWidthX: 4.4
-  BPM: 80
+  musicNote: {fileID: 11400000, guid: 2df3e4d3a8a015a4ebb0ce9377f59db5, type: 2}
   Platform: {fileID: 6697201518510171382, guid: 8a1fd5e375811f84ea38d13dc618e3fb, type: 3}
+  ScreenWidthX: 4.4
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

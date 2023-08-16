@@ -23,17 +23,16 @@ public class Platform : MonoBehaviour
     // Start is called before the first frame update
     SpriteRenderer spriteRender;
     public Note note = new Note();
-    [SerializeField] int noteIndex;
+    [SerializeField] Notes NoteName;
     void OnAwake()
     {
         
     }
 
-    public void SetNote(int Index)
+    public void SetNote(Notes noteName)
     {
-        note.setNote(Index);
-        
-        noteIndex = note.noteIndex;
+
+        NoteName = noteName;
     }
 
 }

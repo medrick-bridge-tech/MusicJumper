@@ -62,7 +62,7 @@ public class CommandCenter : MonoBehaviour
                 _isContinuous = false;
                 
             }
-            
+            Debug.Log($"Creating {noteName},{duration}");
             Create(noteName,duration);
             
             _lastIndex = duration;
@@ -100,10 +100,11 @@ public class CommandCenter : MonoBehaviour
 
             GameObject newPlatform = Instantiate(platform, new Vector2(randomX, y), Quaternion.identity);
             _lastObject = newPlatform;
+            newPlatform.GetComponent<Platform>().SetNote(noteName);
+            newPlatform.GetComponent<SpriteRenderer>().color = _colorList[noteDuration % 7];
         }
 
-        platform.GetComponent<Platform>().SetNote(noteName);
-        platform.GetComponent<SpriteRenderer>().color = _colorList[noteDuration % 7];
+        
     }
     
     

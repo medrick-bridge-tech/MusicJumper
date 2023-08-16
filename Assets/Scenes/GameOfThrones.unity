@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012a4c6b059454d47988119bb12e678c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicNote: {fileID: 11400000, guid: 67df86cb62458eb44a749185e0a6e0e6, type: 2}
+  music: {fileID: 11400000, guid: ee2f6add9a634b44aba6204cec5adc2b, type: 2}
   platform: {fileID: 6697201518510171382, guid: 8a1fd5e375811f84ea38d13dc618e3fb, type: 3}
   screenWidthX: 4.2
 --- !u!1 &519420028

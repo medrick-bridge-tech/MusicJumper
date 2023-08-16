@@ -38,15 +38,10 @@ public class MusicFrame
 [CreateAssetMenu(fileName = "New Music", menuName = "Music")]
 public class Music : ScriptableObject
 {
-    [FormerlySerializedAs("BPM")] [SerializeField][Range(20f, 180f)] float bpm;
-    [SerializeField] private List<MusicFrame> musicSheet;
+    [SerializeField][Range(20f, 180f)] float bpm;
+    [SerializeField] public List<MusicFrame> musicSheet;
 
-    public List<MusicFrame> MusicSheet => musicSheet;
-
-    public void UpdateMusicSheet(List<MusicFrame> musicSheet)
-    {
-        this.musicSheet = musicSheet;
-    }
+    
 
     public float GetBpm()
     {

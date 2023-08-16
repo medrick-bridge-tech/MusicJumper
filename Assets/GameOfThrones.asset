@@ -1,0 +1,212 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d03254b9ec739cd46bdb53af4c1e7f35, type: 3}
+  m_Name: GameOfThrones
+  m_EditorClassIdentifier: 
+  bpm: 40
+  musicSheet:
+  - noteName: 8
+    duration: 0
+  - noteName: 4
+    duration: 6
+  - noteName: 6
+    duration: 12
+  - noteName: 7
+    duration: 13
+  - noteName: 8
+    duration: 14
+  - noteName: 4
+    duration: 18
+  - noteName: 6
+    duration: 22
+  - noteName: 7
+    duration: 23
+  - noteName: 5
+    duration: 24
+  - noteName: 0
+    duration: 26
+  - noteName: 3
+    duration: 28
+  - noteName: 4
+    duration: 29
+  - noteName: 5
+    duration: 30
+  - noteName: 0
+    duration: 32
+  - noteName: 3
+    duration: 34
+  - noteName: 4
+    duration: 35
+  - noteName: 5
+    duration: 36
+  - noteName: 0
+    duration: 38
+  - noteName: 3
+    duration: 40
+  - noteName: 4
+    duration: 41
+  - noteName: 5
+    duration: 42
+  - noteName: 0
+    duration: 44
+  - noteName: 3
+    duration: 46
+  - noteName: 7
+    duration: 48
+  - noteName: 3
+    duration: 54
+  - noteName: 5
+    duration: 60
+  - noteName: 6
+    duration: 61
+  - noteName: 7
+    duration: 62
+  - noteName: 3
+    duration: 66
+  - noteName: 6
+    duration: 70
+  - noteName: 5
+    duration: 71
+  - noteName: 4
+    duration: 72
+  - noteName: 0
+    duration: 74
+  - noteName: 1
+    duration: 76
+  - noteName: 3
+    duration: 77
+  - noteName: 4
+    duration: 78
+  - noteName: 0
+    duration: 80
+  - noteName: 1
+    duration: 82
+  - noteName: 3
+    duration: 83
+  - noteName: 4
+    duration: 84
+  - noteName: 0
+    duration: 86
+  - noteName: 1
+    duration: 88
+  - noteName: 3
+    duration: 89
+  - noteName: 4
+    duration: 90
+  - noteName: 0
+    duration: 92
+  - noteName: 3
+    duration: 94
+  - noteName: 4
+    duration: 96
+  - noteName: 4
+    duration: 102
+  - noteName: 4
+    duration: 108
+  - noteName: 4
+    duration: 114
+  - noteName: 4
+    duration: 116
+  - noteName: 8
+    duration: 120
+  - noteName: 4
+    duration: 126
+  - noteName: 6
+    duration: 132
+  - noteName: 7
+    duration: 133
+  - noteName: 8
+    duration: 134
+  - noteName: 4
+    duration: 138
+  - noteName: 6
+    duration: 142
+  - noteName: 7
+    duration: 143
+  - noteName: 5
+    duration: 144
+  - noteName: 0
+    duration: 146
+  - noteName: 3
+    duration: 148
+  - noteName: 4
+    duration: 149
+  - noteName: 5
+    duration: 150
+  - noteName: 0
+    duration: 152
+  - noteName: 3
+    duration: 154
+  - noteName: 4
+    duration: 155
+  - noteName: 5
+    duration: 156
+  - noteName: 0
+    duration: 158
+  - noteName: 3
+    duration: 160
+  - noteName: 4
+    duration: 161
+  - noteName: 5
+    duration: 162
+  - noteName: 0
+    duration: 164
+  - noteName: 3
+    duration: 166
+  - noteName: 7
+    duration: 168
+  - noteName: 3
+    duration: 174
+  - noteName: 5
+    duration: 180
+  - noteName: 6
+    duration: 181
+  - noteName: 7
+    duration: 182
+  - noteName: 3
+    duration: 186
+  - noteName: 6
+    duration: 190
+  - noteName: 5
+    duration: 191
+  - noteName: 4
+    duration: 192
+  - noteName: 0
+    duration: 194
+  - noteName: 1
+    duration: 196
+  - noteName: 3
+    duration: 197
+  - noteName: 4
+    duration: 198
+  - noteName: 0
+    duration: 200
+  - noteName: 1
+    duration: 202
+  - noteName: 3
+    duration: 203
+  - noteName: 4
+    duration: 204
+  - noteName: 0
+    duration: 206
+  - noteName: 1
+    duration: 208
+  - noteName: 3
+    duration: 209
+  - noteName: 4
+    duration: 210
+  - noteName: 0
+    duration: 212
+  - noteName: 3
+    duration: 214
+  - noteName: 4
+    duration: 216

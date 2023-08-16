@@ -7,8 +7,8 @@ namespace DefaultNamespace
     public class MusicUtility : MonoBehaviour
     {
         [SerializeField] TextAsset textAsset;
-        [SerializeField] private Music music;
-
+        //[SerializeField] private Music music;
+        [SerializeField] private string name;
         public void AddMusic()
         {
 
@@ -32,7 +32,10 @@ namespace DefaultNamespace
 
             }
 
-            music.UpdateMusicSheet(musicSheet);
+            Music music = new Music();
+            music.musicSheet = musicSheet;
+            UnityEditor.AssetDatabase.CreateAsset(music,$"Assets/{name}.asset");
+            //music.UpdateMusicSheet(musicSheet);
         }
     }
 }

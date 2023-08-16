@@ -49,11 +49,11 @@ public class CommandCenter : MonoBehaviour
     void DisplayPlatforms()
     {
         
-        for(int i = 0; i < music.MusicSheet.Count; i++)
+        for(int i = 0; i < music.musicSheet.Count; i++)
         {
-            int duration = music.MusicSheet[i].duration;
+            int duration = music.musicSheet[i].duration;
             
-            Notes noteName = music.MusicSheet[i].noteName;
+            Notes noteName = music.musicSheet[i].noteName;
             
             if (duration - _lastIndex <= 3f)
             {

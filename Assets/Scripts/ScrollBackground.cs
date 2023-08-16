@@ -5,12 +5,12 @@ using UnityEngine;
 public class ScrollBackground : MonoBehaviour
 {
     [SerializeField][Range(0f,10f)] float scrollSpeed;
-    private Renderer render;
-    private Vector2 scrollPosition;
+    private Renderer _render;
+    private Vector2 _scrollPosition;
     // Start is called before the first frame update
     void Start()
     {
-        render = GetComponent<Renderer>();
+        _render = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -18,6 +18,6 @@ public class ScrollBackground : MonoBehaviour
     {
         float y = Mathf.Repeat(Time.time * scrollSpeed, 1);
         Vector2 offset = new Vector2(0, y);
-        render.sharedMaterial.SetTextureOffset("_MainTex", offset);
+        _render.sharedMaterial.SetTextureOffset("_MainTex", offset);
     }
 }

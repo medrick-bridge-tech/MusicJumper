@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Symphony9
   m_EditorClassIdentifier: 
   textAsset: {fileID: 4900000, guid: 27d46925caa700843aef736bdd08e9eb, type: 3}
-  BPM: 64
+  BPM: 60
   MusicSheet:
   - NoteName: 12
     duration: 0
   - NoteName: 12
     duration: 4
-  - NoteName: 12
+  - NoteName: 13
     duration: 8
   - NoteName: 14
     duration: 12

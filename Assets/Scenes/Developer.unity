@@ -276,7 +276,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 67df86cb62458eb44a749185e0a6e0e6, type: 2}
         m_TargetAssemblyTypeName: MusicNote, Assembly-CSharp
-        m_MethodName: AddMMusic
+        m_MethodName: AddMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -5,17 +5,17 @@ using UnityEngine;
 public class Platform : MonoBehaviour
 {
     // Start is called before the first frame update
-    SpriteRenderer spriteRender;
-    public Notes NoteName;
+    SpriteRenderer _spriteRender;
+    public Notes noteName;
     void OnAwake()
     {
         
     }
 
-    public void SetNote(Notes noteName)
+    public void SetNote(Notes _noteName)
     {
 
-        NoteName = noteName;
+        this.noteName = _noteName;
     }
 
 }

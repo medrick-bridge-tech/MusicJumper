@@ -7,20 +7,20 @@ public class CommandCenter : MonoBehaviour
 {
     
     [SerializeField] MusicNote musicNote;
-    [SerializeField] GameObject Platform;
-    [SerializeField] float ScreenWidthX;
-    List<Color> ColorList = new List<Color>();
+    [SerializeField] GameObject platform;
+    [SerializeField] float screenWidthX;
+    List<Color> _colorList = new List<Color>();
 
-    private GameObject lastObject;
-    private bool isContinuous = false;
-    private int lastIndex = -4;
-    private float percentPerBPM;
+    private GameObject _lastObject;
+    private bool _isContinuous;
+    private int _lastIndex = -4;
+    private float _percentPerBpm;
 
-    Jumper player;
-    float BPM;
-    public float GetPercentPerBMP()
+    Jumper _player;
+    float _bpm;
+    public float GetPercentPerBmp()
     {
-        return percentPerBPM;
+        return _percentPerBpm;
     }
     public Color CreateColor(float r, float g, float b)
     {
@@ -28,16 +28,17 @@ public class CommandCenter : MonoBehaviour
     }
     void Start()
     {
-        ColorList = new List<Color> { Color.blue, CreateColor(163f, 73f, 164f), Color.red, CreateColor(255f, 127f, 39f), Color.yellow, Color.green, CreateColor(34f, 177f, 76f) };
-        BPM = musicNote.GetBPM();
-        percentPerBPM = Mathf.InverseLerp(20f, 120f,BPM);
+        _isContinuous = false;
+        _colorList = new List<Color> { Color.blue, CreateColor(163f, 73f, 164f), Color.red, CreateColor(255f, 127f, 39f), Color.yellow, Color.green, CreateColor(34f, 177f, 76f) };
+        _bpm = musicNote.GetBpm();
+        _percentPerBpm = Mathf.InverseLerp(20f, 120f,_bpm);
 
-        float jumpValue = Mathf.Lerp(28f, 12f, percentPerBPM);
-        float speedValue = Mathf.Lerp(10f, 20f, percentPerBPM);
-        player = FindObjectOfType<Jumper>();
+        float jumpValue = Mathf.Lerp(28f, 16f, _percentPerBpm);
+        float speedValue = Mathf.Lerp(10f, 20f, _percentPerBpm);
+        _player = FindObjectOfType<Jumper>();
 
-        player.setJumpForce(jumpValue);
-        player.setMoveSpeed(speedValue);
+        _player.SetJumpForce(jumpValue);
+        _player.SetMoveSpeed(speedValue);
 
         DisplayPlatforms();
 
@@ -45,35 +46,38 @@ public class CommandCenter : MonoBehaviour
 
     void DisplayPlatforms()
     {
-
-        for(int i = 0; i < musicNote.MusicSheet.Count; i++)
+        
+        for(int i = 0; i < musicNote.musicSheet.Count; i++)
         {
-            int DURATION = musicNote.MusicSheet[i].duration;
+            int duration = musicNote.musicSheet[i].duration;
             
-            Notes NoteName = musicNote.MusicSheet[i].NoteName;
+            Notes noteName = musicNote.musicSheet[i].noteName;
             
-            if (DURATION - lastIndex <= 3f)
+            if (duration - _lastIndex <= 3f)
             {
-                isContinuous = true;
+                _isContinuous = true;
             }
             else
             {
-                isContinuous = false;
+                _isContinuous = false;
+                
             }
             
-            Create(NoteName,DURATION);
-            lastIndex = DURATION;
+            Create(noteName,duration);
+            
+            _lastIndex = duration;
 
 
 
-            int ListIndex = DURATION;
-            if (ListIndex == 0)
+            int listIndex = duration;
+            if (listIndex == 0)
             {
-                Vector2 Position = FindObjectOfType<Platform>().transform.position;
-                Jumper Player = FindObjectOfType<Jumper>();
-                Position.y = Player.transform.position.y;
+                Vector2 position = FindObjectOfType<Platform>().transform.position;
+                Jumper player = FindObjectOfType<Jumper>();
+                var transform1 = player.transform;
+                position.y = transform1.position.y;
 
-                Player.transform.position = Position;
+                transform1.position = position;
             }
 
         }
@@ -82,20 +86,24 @@ public class CommandCenter : MonoBehaviour
 
     void Create(Notes noteName , int noteDuration)
     {
-        float randomX = UnityEngine.Random.Range(-ScreenWidthX, ScreenWidthX - 1f);
+        var randomX = UnityEngine.Random.Range(-screenWidthX, screenWidthX - 1f);
 
-        float Y = (2 * (1 / ( BPM / 60)) * noteDuration) - (Camera.main.orthographicSize / 2);
-        Debug.Log(Y);
-
-        if (isContinuous)
+        if (Camera.main != null)
         {
-            randomX = lastObject.transform.position.x;
+            float y = (2 * (1 / ( _bpm / 60)) * noteDuration) - (Camera.main.orthographicSize / 2);
+            Debug.Log(y);
+
+            if (_isContinuous)
+            {
+                randomX = _lastObject.transform.position.x;
+            }
+
+            GameObject newPlatform = Instantiate(platform, new Vector2(randomX, y), Quaternion.identity);
+            _lastObject = newPlatform;
         }
 
-        GameObject platform = Instantiate(Platform, new Vector2(randomX, Y), Quaternion.identity);
-        lastObject = platform;
         platform.GetComponent<Platform>().SetNote(noteName);
-        platform.GetComponent<SpriteRenderer>().color = ColorList[noteDuration % 7];
+        platform.GetComponent<SpriteRenderer>().color = _colorList[noteDuration % 7];
     }
     
     

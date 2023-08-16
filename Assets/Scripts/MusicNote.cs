@@ -7,23 +7,24 @@ using UnityEditor.Build.Content;
 using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
+using UnityEngine.Serialization;
 
 [Serializable]
 public class MusicFrame
 {
-    public Notes NoteName;
+    public Notes noteName;
     public int duration;
     
-    public MusicFrame(Notes noteName, int Duration)
+    public MusicFrame(Notes notename, int duration)
     {
-        NoteName = noteName;
-        duration = Duration;
+        noteName = notename;
+        this.duration = duration;
     }
     
-    public int GetIndex(Notes NoteName)
+    public int GetIndex(Notes notename)
     {
-        int Index = (int)NoteName;
-        return Index;
+        int index = (int)notename;
+        return index;
     }
 
     public int GetDuration()
@@ -38,37 +39,37 @@ public class MusicFrame
 public class MusicNote : ScriptableObject
 {
     [SerializeField] TextAsset textAsset;
-    [SerializeField][Range(20f, 180f)] float BPM;
-    public List<MusicFrame> MusicSheet;
+    [FormerlySerializedAs("BPM")] [SerializeField][Range(20f, 180f)] float bpm;
+    public List<MusicFrame> musicSheet;
 
-    public float GetBPM()
+    public float GetBpm()
     {
-        return BPM;
+        return bpm;
     }
 
     public string GetNoteName(Notes note)
     {
         return note.ToString();
     }
-    public void AddMMusic()
+    public void AddMusic()
     {
 
-        string[] MusicNoteText = (textAsset.text).Split(",");
+        string[] musicNoteText = (textAsset.text).Split(",");
         
 
-        for (int i = 0; i < MusicNoteText.Length; i += 2)
+        for (int i = 0; i < musicNoteText.Length; i += 2)
         {
             try{
-                Debug.Log(Convert.ToInt32(MusicNoteText[i]));
-                int duration = Convert.ToInt32(MusicNoteText[i]);
-                Notes thisFrame = (Notes)Enum.Parse(typeof(Notes), MusicNoteText[i + 1], true);
-                MusicSheet.Add(new MusicFrame(thisFrame, duration));
+                Debug.Log(Convert.ToInt32(musicNoteText[i]));
+                int duration = Convert.ToInt32(musicNoteText[i]);
+                Notes thisFrame = (Notes)Enum.Parse(typeof(Notes), musicNoteText[i + 1], true);
+                musicSheet.Add(new MusicFrame(thisFrame, duration));
             }
             catch(Exception e){
-                Debug.Log($"Error in line {i} : {MusicNoteText[i]},{MusicNoteText[i + 1]}");
+                Debug.Log($"Error in line {i} : {musicNoteText[i]},{musicNoteText[i + 1]}");
                 break;
             }
-            
+
         }
         
     }

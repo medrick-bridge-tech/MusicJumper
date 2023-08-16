@@ -2,23 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cameraFollow : MonoBehaviour
+public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] Transform Target;
+    [SerializeField] private Transform target;
     [SerializeField] float smoothSpeed;
 
-    private Vector3 Offset;
+    private Vector3 _offset;
 
     private void Start()
     {
-        Offset = transform.position - Target.position;
+        _offset = transform.position - target.position;
     }
 
     private void Update()
     {
-        Vector3 Direction = Target.position + Offset;
-        Direction.x = transform.position.x;
-        Vector3 smoothPositin = Vector3.Lerp(transform.position, Direction, smoothSpeed);
-        transform.position = smoothPositin;
+        Vector3 direction = target.position + _offset;
+        var position = transform.position;
+        direction.x = position.x;
+        var smoothPosition = Vector3.Lerp(position, direction, smoothSpeed);
+        position = smoothPosition;
+        transform.position = position;
     }
 }

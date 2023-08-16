@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,40 +10,61 @@ public class Jumper : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField] float jumpForce;
     [SerializeField] float moveSpeed;
-
+    [SerializeField] GameObject platformDestroyVFX;
     //[SerializeField] List<AudioClip> clipList = new List<AudioClip>();
     public NotesStorage notesStorage;
     
     // Start is called before the first frame update
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("platform"))
+        if (collision.gameObject.CompareTag($"platform"))
         {
             Jump();
-            Notes noteName = collision.gameObject.GetComponent<Platform>().NoteName;
-
-            int index = (int)noteName;
-
-            audioSource.PlayOneShot(notesStorage.notes[index].noteSound);
+            
+            DestroyPlatform(collision.gameObject);
         }
     }
 
-    public void setJumpForce(float force)
+    void PlaySound(GameObject platform)
+    {
+        Notes noteName = platform.GetComponent<Platform>().noteName;
+
+        int index = (int)noteName;
+
+        audioSource.PlayOneShot(notesStorage.notes[index].noteSound);
+    }
+
+    public void DestroyPlatform(GameObject platform)
+    {
+        PlaySound(platform);
+        PlayVFX(platformDestroyVFX,platform);
+        Destroy(platform);
+    }
+
+    [Obsolete("Obsolete")]
+    void PlayVFX(GameObject vfx,GameObject target)
+    {
+        GameObject effect = Instantiate(vfx,target.transform.position,Quaternion.identity);
+        effect.GetComponent<ParticleSystem>().startColor = target.GetComponent<SpriteRenderer>().color;
+        Destroy(effect,1f);
+    }
+
+    public void SetJumpForce(float force)
     {
         jumpForce = force;
     }
-    public void setMoveSpeed(float speed)
+    public void SetMoveSpeed(float speed)
     {
         moveSpeed = speed;
     }
     void Jump()
     {
-        Vector2 Velocity = rigidBody.velocity;
-        Velocity.y = jumpForce;
-        rigidBody.velocity = Velocity;
+        Vector2 playerVelocity = rigidBody.velocity;
+        playerVelocity.y = jumpForce;
+        rigidBody.velocity = playerVelocity;
     }
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -58,12 +80,12 @@ public class Jumper : MonoBehaviour
 
     void Move()
     {
-        float HorizontalAxis = Input.GetAxisRaw("Horizontal");
+        float horizontalAxis = Input.GetAxisRaw("Horizontal");
 
-        Vector3 Direction = Vector3.zero;
-        Direction.x = HorizontalAxis;
+        Vector3 direction = Vector3.zero;
+        direction.x = horizontalAxis;
 
-        Vector3 Translate = Direction * moveSpeed * Time.deltaTime;
-        transform.Translate(Translate);
+        Vector3 translate = direction * (moveSpeed * Time.deltaTime);
+        transform.Translate(translate);
     }
 }

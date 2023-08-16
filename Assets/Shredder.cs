@@ -7,7 +7,11 @@ public class Shredder : MonoBehaviour
     Jumper _player;
     void OnCollisionEnter2D(Collision2D collision)
     {
-        _player.DestroyPlatform(collision.gameObject);
+        if (collision.gameObject.CompareTag($"platform"))
+        {
+            _player.DestroyPlatform(collision.gameObject);
+        }
+        Destroy(collision.gameObject);
     }
 
     private void Start()

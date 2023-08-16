@@ -17,9 +17,11 @@ public class CommandCenter : MonoBehaviour
     private bool _isContinuous;
     private int _lastIndex = -4;
     private float _percentPerBpm;
-
+    
     Jumper _player;
     float _bpm;
+    
+    
     public float GetPercentPerBmp()
     {
         return _percentPerBpm;

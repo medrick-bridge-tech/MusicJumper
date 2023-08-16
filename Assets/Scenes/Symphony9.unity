@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 467303854}
   - component: {fileID: 467303855}
+  - component: {fileID: 467303856}
   m_Layer: 0
   m_Name: CommandCenter
   m_TagString: Untagged
@@ -170,6 +171,18 @@ MonoBehaviour:
   music: {fileID: 11400000, guid: 258f3521687c63548be222e6b6ceb1bb, type: 2}
   platform: {fileID: 6697201518510171382, guid: 8a1fd5e375811f84ea38d13dc618e3fb, type: 3}
   screenWidthX: 4.2
+--- !u!114 &467303856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467303853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a330e331f3ac40189e3e477914a5a511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

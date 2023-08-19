@@ -11,7 +11,6 @@ public class Jumper : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] float moveSpeed;
     [SerializeField] GameObject platformDestroyVFX;
-    [SerializeField] GameObject plyerDestroyVFX;
     
     public NotesStorage notesStorage;
     

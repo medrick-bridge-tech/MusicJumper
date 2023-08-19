@@ -20,13 +20,9 @@ public class CommandCenter : MonoBehaviour
     
     Jumper _player;
     float _bpm;
-    
-    
-    public float GetPercentPerBmp()
-    {
-        return _percentPerBpm;
-    }
-    public Color CreateColor(float r, float g, float b)
+
+
+    private Color CreateColor(float r, float g, float b)
     {
         return new Color(r / 255, g / 255, b / 255);
     }
@@ -34,6 +30,7 @@ public class CommandCenter : MonoBehaviour
     {
         _isContinuous = false;
         _colorList = new List<Color> { Color.blue, CreateColor(163f, 73f, 164f), Color.red, CreateColor(255f, 127f, 39f), Color.yellow, Color.green, CreateColor(34f, 177f, 76f) };
+        
         _bpm = music.GetBpm();
         _percentPerBpm = Mathf.InverseLerp(20f, 120f,_bpm);
 
@@ -66,15 +63,15 @@ public class CommandCenter : MonoBehaviour
                 _isContinuous = false;
                 
             }
-            Debug.Log($"Creating {noteName},{duration}");
+            
             Create(noteName,duration);
             
             _lastIndex = duration;
 
 
 
-            int listIndex = duration;
-            if (listIndex == 0)
+            
+            if (duration == 0)
             {
                 Vector2 position = FindObjectOfType<Platform>().transform.position;
                 Jumper player = FindObjectOfType<Jumper>();
@@ -95,7 +92,6 @@ public class CommandCenter : MonoBehaviour
         if (Camera.main != null)
         {
             float y = (2 * (1 / ( _bpm / 60)) * noteDuration) - (Camera.main.orthographicSize / 2);
-            Debug.Log(y);
 
             if (_isContinuous)
             {

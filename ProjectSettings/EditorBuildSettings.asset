@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Casatchok.unity
     guid: 397ead768c8bb794b97874b039cbb22c
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: f10c2c5f208c21143897962b0541c0d9
   m_configObjects: {}

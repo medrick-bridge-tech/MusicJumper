@@ -14,7 +14,6 @@ public class Platform : MonoBehaviour
 
     public void SetNote(Notes _noteName)
     {
-
         this.noteName = _noteName;
     }
 

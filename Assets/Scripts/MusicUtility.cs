@@ -20,10 +20,9 @@ namespace DefaultNamespace
             for (int i = 0; i < musicNoteText.Length; i += 2)
             {
                 try{
-                    Debug.Log(Convert.ToInt32(musicNoteText[i]));
                     int duration = Convert.ToInt32(musicNoteText[i]);
-                    Notes thisFrame = (Notes)Enum.Parse(typeof(Notes), musicNoteText[i + 1], true);
-                    musicSheet.Add(new MusicFrame(thisFrame, duration));
+                    Notes thisFrameNote = (Notes)Enum.Parse(typeof(Notes), musicNoteText[i + 1], true);
+                    musicSheet.Add(new MusicFrame(thisFrameNote, duration));
                 }
                 catch(Exception e){
                     Debug.Log($"Error in line {i} : {musicNoteText[i]},{musicNoteText[i + 1]}");
@@ -35,7 +34,7 @@ namespace DefaultNamespace
             Music music = new Music();
             music.musicSheet = musicSheet;
             UnityEditor.AssetDatabase.CreateAsset(music,$"Assets/{name}.asset");
-            //music.UpdateMusicSheet(musicSheet);
+            
         }
     }
 }

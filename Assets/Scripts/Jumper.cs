@@ -11,7 +11,8 @@ public class Jumper : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] float moveSpeed;
     [SerializeField] GameObject platformDestroyVFX;
-    //[SerializeField] List<AudioClip> clipList = new List<AudioClip>();
+    [SerializeField] GameObject plyerDestroyVFX;
+    
     public NotesStorage notesStorage;
     
     // Start is called before the first frame update
@@ -25,6 +26,13 @@ public class Jumper : MonoBehaviour
         }
     }
 
+    public void DestroyPlatform(GameObject platform)
+    {
+        PlaySound(platform);
+        PlayVFX(platformDestroyVFX,platform);
+        Destroy(platform);
+    }
+    
     void PlaySound(GameObject platform)
     {
         Notes noteName = platform.GetComponent<Platform>().noteName;
@@ -32,13 +40,6 @@ public class Jumper : MonoBehaviour
         int index = (int)noteName;
 
         audioSource.PlayOneShot(notesStorage.notes[index].noteSound);
-    }
-
-    public void DestroyPlatform(GameObject platform)
-    {
-        PlaySound(platform);
-        PlayVFX(platformDestroyVFX,platform);
-        Destroy(platform);
     }
 
     [Obsolete("Obsolete")]
@@ -49,6 +50,7 @@ public class Jumper : MonoBehaviour
         Destroy(effect,1f);
     }
 
+    
     public void SetJumpForce(float force)
     {
         jumpForce = force;
@@ -57,6 +59,7 @@ public class Jumper : MonoBehaviour
     {
         moveSpeed = speed;
     }
+    
     void Jump()
     {
         Vector2 playerVelocity = rigidBody.velocity;

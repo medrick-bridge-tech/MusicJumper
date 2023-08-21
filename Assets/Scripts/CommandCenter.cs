@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class CommandCenter : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class CommandCenter : MonoBehaviour
     [FormerlySerializedAs("musicNote")] [SerializeField] Music music;
     [SerializeField] GameObject platform;
     [SerializeField] float screenWidthX;
+    [SerializeField] GameObject coin;
+    [FormerlySerializedAs("ChanceToSpawn")] [SerializeField] private float chanceToSpawn;
     List<Color> _colorList = new List<Color>();
 
     private GameObject _lastObject;
@@ -65,9 +68,9 @@ public class CommandCenter : MonoBehaviour
             }
             
             Create(noteName,duration);
-            
-            _lastIndex = duration;
 
+            _lastIndex = duration;
+    
 
 
             
@@ -82,29 +85,44 @@ public class CommandCenter : MonoBehaviour
             }
 
         }
+
+        for (int j = 0; j < music.musicSheet.Count / chanceToSpawn; j++)
+        {
+            int chanceToSpawn = music.musicSheet[j].duration;
+            CoinGenerator(chanceToSpawn);
+        }
         
     }
 
     void Create(Notes noteName , int noteDuration)
     {
         var randomX = UnityEngine.Random.Range(-screenWidthX, screenWidthX - 1f);
-
         if (Camera.main != null)
         {
-            float y = (2 * (1 / ( _bpm / 60)) * noteDuration) - (Camera.main.orthographicSize / 2);
-
+            float yAxisForPlatform = (2 * (1 / ( _bpm / 60)) * noteDuration) - (Camera.main.orthographicSize / 2);
+            
             if (_isContinuous)
             {
                 randomX = _lastObject.transform.position.x;
             }
 
-            GameObject newPlatform = Instantiate(platform, new Vector2(randomX, y), Quaternion.identity);
+            GameObject newPlatform = Instantiate(platform, new Vector2(randomX, yAxisForPlatform), Quaternion.identity);
+            
             _lastObject = newPlatform;
             newPlatform.GetComponent<Platform>().SetNote(noteName);
             newPlatform.GetComponent<SpriteRenderer>().color = _colorList[noteDuration % 7];
+            
+            
         }
 
         
+    }
+
+    void CoinGenerator(int noteDuration)
+    {
+        var randomX = UnityEngine.Random.Range(-screenWidthX, screenWidthX - 1f);
+        float yAxisForCoin = (2 * (1 / (_bpm / 60)) * noteDuration ) - (Camera.main.orthographicSize / 2);
+        GameObject newCoin = Instantiate(coin, new Vector2(-randomX, yAxisForCoin), Quaternion.identity);
     }
     
     

@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class Control : MonoBehaviour
 {
     
-
-    
     void Update()
     {
         Reset();

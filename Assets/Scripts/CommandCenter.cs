@@ -13,6 +13,7 @@ public class CommandCenter : MonoBehaviour
     [SerializeField] GameObject platform;
     [SerializeField] float screenWidthX;
     [SerializeField] GameObject coin;
+    [SerializeField] GameObject obstacle;
     List<Color> _colorList = new List<Color>();
     private float lastPlatformPosition = 0.0f;
 
@@ -46,6 +47,7 @@ public class CommandCenter : MonoBehaviour
 
         DisplayPlatforms();
         GenerateCoin();
+        GenerateObstacle();
     }
 
     void DisplayPlatforms()
@@ -128,6 +130,19 @@ public class CommandCenter : MonoBehaviour
             {
                 Vector2 spawnposition = new Vector2(platform.transform.position.x, Random.Range(minY, lastPlatformPosition));
                 Instantiate(coin, spawnposition, Quaternion.identity);
+            }
+        }
+    }
+
+    [Range(0.0f, 1.0f)] [SerializeField] private float spawnChanceObstacle;
+    void GenerateObstacle()
+    {
+        foreach (Platform platform in FindObjectsOfType<Platform>())
+        {
+            if (Random.value < spawnChanceObstacle)
+            {
+                Vector2 spawnPositionObstacle = new Vector2(platform.transform.position.x, Random.Range(minY, lastPlatformPosition));
+                Instantiate(obstacle, spawnPositionObstacle, Quaternion.identity);
             }
         }
     }

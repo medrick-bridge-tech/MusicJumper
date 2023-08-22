@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3972c86be3c00b74c8003c6d4dbeb0f3, type: 3}
   m_Name: Casatchok
   m_EditorClassIdentifier: 
-  bpm: 20
+  bpm: 27
   musicSheet:
   - noteName: 8
     duration: 0

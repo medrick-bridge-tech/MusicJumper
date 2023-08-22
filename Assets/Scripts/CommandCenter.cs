@@ -13,8 +13,8 @@ public class CommandCenter : MonoBehaviour
     [SerializeField] GameObject platform;
     [SerializeField] float screenWidthX;
     [SerializeField] GameObject coin;
-    [FormerlySerializedAs("ChanceToSpawn")] [SerializeField] private float chanceToSpawn;
     List<Color> _colorList = new List<Color>();
+    private float lastPlatformPosition = 0.0f;
 
     private GameObject _lastObject;
     private bool _isContinuous;
@@ -45,7 +45,7 @@ public class CommandCenter : MonoBehaviour
         _player.SetMoveSpeed(speedValue);
 
         DisplayPlatforms();
-
+        GenerateCoin();
     }
 
     void DisplayPlatforms()
@@ -68,11 +68,8 @@ public class CommandCenter : MonoBehaviour
             }
             
             Create(noteName,duration);
-
+            
             _lastIndex = duration;
-    
-
-
             
             if (duration == 0)
             {
@@ -86,11 +83,8 @@ public class CommandCenter : MonoBehaviour
 
         }
 
-        for (int j = 0; j < music.musicSheet.Count / chanceToSpawn; j++)
-        {
-            int chanceToSpawn = music.musicSheet[j].duration;
-            CoinGenerator(chanceToSpawn);
-        }
+        
+        
         
     }
 
@@ -102,28 +96,40 @@ public class CommandCenter : MonoBehaviour
             float yAxisForPlatform = (2 * (1 / ( _bpm / 60)) * noteDuration) - (Camera.main.orthographicSize / 2);
             
             if (_isContinuous)
+                
             {
                 randomX = _lastObject.transform.position.x;
             }
 
+            float yPositions = yAxisForPlatform;
+            
             GameObject newPlatform = Instantiate(platform, new Vector2(randomX, yAxisForPlatform), Quaternion.identity);
             
             _lastObject = newPlatform;
+            lastPlatformPosition = yPositions;
+            var randomNumber = Random.Range(0, lastPlatformPosition);
+            
+            
             newPlatform.GetComponent<Platform>().SetNote(noteName);
             newPlatform.GetComponent<SpriteRenderer>().color = _colorList[noteDuration % 7];
-            
-            
         }
 
         
     }
 
-    void CoinGenerator(int noteDuration)
+    [SerializeField] private float minY = 0;
+    [Range(0.0f, 1.0f)] [SerializeField] private float spawnChance = 0.5f;
+
+    void GenerateCoin()
     {
-        var randomX = UnityEngine.Random.Range(-screenWidthX, screenWidthX - 1f);
-        float yAxisForCoin = (2 * (1 / (_bpm / 60)) * noteDuration ) - (Camera.main.orthographicSize / 2);
-        GameObject newCoin = Instantiate(coin, new Vector2(-randomX, yAxisForCoin), Quaternion.identity);
+        foreach (Platform platform  in FindObjectsOfType<Platform>())
+        {
+            if (Random.value < spawnChance)
+            {
+                Vector2 spawnposition = new Vector2(platform.transform.position.x, Random.Range(minY, lastPlatformPosition));
+                Instantiate(coin, spawnposition, Quaternion.identity);
+            }
+        }
     }
-    
-    
+
 }

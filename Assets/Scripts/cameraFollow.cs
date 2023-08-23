@@ -24,8 +24,7 @@ public class CameraFollow : MonoBehaviour
     {
         if (targetTransform && targetTransform.GetComponent<Rigidbody2D>().velocity.y > 0)
         {
-            
-                Vector3 direction = targetTransform.position + _offset;
+            Vector3 direction = targetTransform.position + _offset;
                 var position = transform.position;
                 direction.x = position.x;
                 var smoothPosition = Vector3.Lerp(position, direction, smoothSpeed);

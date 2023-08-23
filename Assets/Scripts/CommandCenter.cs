@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class CommandCenter : MonoBehaviour
 {
@@ -11,7 +12,10 @@ public class CommandCenter : MonoBehaviour
     [FormerlySerializedAs("musicNote")] [SerializeField] Music music;
     [SerializeField] GameObject platform;
     [SerializeField] float screenWidthX;
+    [SerializeField] GameObject coin;
+    [SerializeField] GameObject obstacle;
     List<Color> _colorList = new List<Color>();
+    private float lastPlatformPosition = 0.0f;
 
     private GameObject _lastObject;
     private bool _isContinuous;
@@ -42,7 +46,8 @@ public class CommandCenter : MonoBehaviour
         _player.SetMoveSpeed(speedValue);
 
         DisplayPlatforms();
-
+        GenerateCoin();
+        GenerateObstacle();
     }
 
     void DisplayPlatforms()
@@ -67,9 +72,6 @@ public class CommandCenter : MonoBehaviour
             Create(noteName,duration);
             
             _lastIndex = duration;
-
-
-
             
             if (duration == 0)
             {
@@ -82,30 +84,67 @@ public class CommandCenter : MonoBehaviour
             }
 
         }
+
+        
+        
         
     }
 
     void Create(Notes noteName , int noteDuration)
     {
         var randomX = UnityEngine.Random.Range(-screenWidthX, screenWidthX - 1f);
-
         if (Camera.main != null)
         {
-            float y = (2 * (1 / ( _bpm / 60)) * noteDuration) - (Camera.main.orthographicSize / 2);
-
+            float yAxisForPlatform = (2 * (1 / ( _bpm / 60)) * noteDuration) - (Camera.main.orthographicSize / 2);
+            
             if (_isContinuous)
+                
             {
                 randomX = _lastObject.transform.position.x;
             }
 
-            GameObject newPlatform = Instantiate(platform, new Vector2(randomX, y), Quaternion.identity);
+            float yPositions = yAxisForPlatform;
+            
+            GameObject newPlatform = Instantiate(platform, new Vector2(randomX, yAxisForPlatform), Quaternion.identity);
+            
             _lastObject = newPlatform;
+            lastPlatformPosition = yPositions;
+            var randomNumber = Random.Range(0, lastPlatformPosition);
+            
+            
             newPlatform.GetComponent<Platform>().SetNote(noteName);
             newPlatform.GetComponent<SpriteRenderer>().color = _colorList[noteDuration % 7];
         }
 
         
     }
-    
-    
+
+    [SerializeField] private float minY = 0;
+    [Range(0.0f, 1.0f)] [SerializeField] private float spawnChance = 0.5f;
+
+    void GenerateCoin()
+    {
+        foreach (Platform platform  in FindObjectsOfType<Platform>())
+        {
+            if (Random.value < spawnChance)
+            {
+                Vector2 spawnposition = new Vector2(platform.transform.position.x, Random.Range(minY, lastPlatformPosition));
+                Instantiate(coin, spawnposition, Quaternion.identity);
+            }
+        }
+    }
+
+    [Range(0.0f, 0.5f)] [SerializeField] private float spawnChanceObstacle;
+    void GenerateObstacle()
+    {
+        foreach (Platform platform in FindObjectsOfType<Platform>())
+        {
+            if (Random.value < spawnChanceObstacle)
+            {
+                Vector2 spawnPositionObstacle = new Vector2(platform.transform.position.x, Random.Range(minY, lastPlatformPosition));
+                Instantiate(obstacle, spawnPositionObstacle, Quaternion.identity);
+            }
+        }
+    }
+
 }

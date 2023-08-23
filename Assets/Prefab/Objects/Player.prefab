@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4937243576339822003
 SpriteRenderer:
@@ -77,12 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 156d25cdbf2f2f8448357789ba29af97, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6195e39aa7939b64689443fc2101aa3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.2, y: 3.2}
+  m_Size: {x: 6.8, y: 9.1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -97,13 +97,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4937243576339822006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a571c09177959804cb52c1624e77f1e9, type: 3}
+  m_Script: {fileID: 11500000, guid: b038a91ec0c8e3b4c970edaa95fad9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 16
-  moveSpeed: 10
-  platformDestroyVFX: {fileID: 8612886573937371802, guid: addfd17540c2c934699b4286c69cd611, type: 3}
-  notesStorage: {fileID: 11400000, guid: 86567fa74ea2c6242a8f3ee098c0b26d, type: 2}
+  jumpForce: 0
+  moveSpeed: 0
+  platformDestroyVFX: {fileID: 8612886573937371802, guid: bc1cf651738fa1f4993edea4c899eba1, type: 3}
+  plyerDestroyVFX: {fileID: 0}
+  notesStorage: {fileID: 0}
 --- !u!50 &4937243576339822013
 Rigidbody2D:
   serializedVersion: 4
@@ -143,7 +144,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.85, y: 1.44}
-    newSize: {x: 3.2, y: 3.2}
+    newSize: {x: 6.8, y: 9.1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

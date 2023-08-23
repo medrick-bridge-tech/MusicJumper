@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2101672649618793327}
   - component: {fileID: 3721590928919756713}
-  - component: {fileID: 4845621543768576108}
+  - component: {fileID: 3901551303521625750}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Wire
@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859149917341492928}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6755, y: -0.4637, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.5, z: 1}
+  m_LocalPosition: {x: -0.697, y: 1.2544, z: 0}
+  m_LocalScale: {x: 0.1881391, y: 0.16445, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,19 +74,19 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2040605019, guid: 24697e59aab1d8a4c85e2b7e634580c7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bb456dafcd226164d898aad393153388, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 19.2, y: 2.82}
+  m_Size: {x: 10.24, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4845621543768576108
-BoxCollider2D:
+--- !u!58 &3901551303521625750
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -98,16 +98,6 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.2, y: 2.82}
-    newSize: {x: 19.2, y: 2.82}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.46606755, y: 0.5090518}
   serializedVersion: 2
-  m_Size: {x: 19.2, y: 2.82}
-  m_EdgeRadius: 0
+  m_Radius: 3.2779233

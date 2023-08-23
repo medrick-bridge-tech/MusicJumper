@@ -6,6 +6,7 @@ TagManager:
   tags:
   - platform
   - Coin
+  - Wire
   layers:
   - Default
   - TransparentFX

@@ -171,8 +171,10 @@ MonoBehaviour:
   platform: {fileID: 6697201518510171382, guid: 068411727e87cc2408bab8bfe9c54213, type: 3}
   screenWidthX: 4.3
   coin: {fileID: 7777622690485115779, guid: 145928c706fff8b4e82ca6e4a9e77e69, type: 3}
-  minY: 50
+  obstacle: {fileID: 1859149917341492928, guid: 933c81c2770e9de4ebcba0ae0b0f3371, type: 3}
+  minY: 0
   spawnChance: 0.19
+  spawnChanceObstacle: 0.014
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +404,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinCountText: {fileID: 2035676901}
+--- !u!114 &1765846112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745504514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ca2fa1c18484a94aa20a7472ae1187e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1788026966
 GameObject:
   m_ObjectHideFlags: 0

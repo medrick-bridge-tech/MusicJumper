@@ -134,7 +134,7 @@ public class CommandCenter : MonoBehaviour
         }
     }
 
-    [Range(0.0f, 1.0f)] [SerializeField] private float spawnChanceObstacle;
+    [Range(0.0f, 0.5f)] [SerializeField] private float spawnChanceObstacle;
     void GenerateObstacle()
     {
         foreach (Platform platform in FindObjectsOfType<Platform>())
